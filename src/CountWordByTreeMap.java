@@ -6,17 +6,17 @@ public class CountWordByTreeMap {
         Map<String, Integer> treeMap = new TreeMap<>();
         String string = "what do you mean what do you fking do";
         String[] myStrings = string.split(" ");
-        int value = 0;
+        int count = 0;
         for (int i = 0; i < myStrings.length; i++) {
             for (int j = 0; j < myStrings.length; j++) {
                 if (myStrings[j].equals(myStrings[i])) {
-                    value++;
+                    count++;
                 }
             }
-            treeMap.put(myStrings[i], value);
-            value = 0;
+            treeMap.put(myStrings[i], count);
+            count = 0;
         }
 
-        treeMap.forEach((key, value1) -> System.out.println(key + " - " + value1));
+        treeMap.forEach((key, value) -> System.out.printf("word: \"%s\" is appear %s\n", key, value));
     }
 }
